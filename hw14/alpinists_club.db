@@ -1,0 +1,22 @@
+Alpinists:
+    idAlpinists: int PK
+    Surname: varchar
+    Name: varchar
+
+Alpinists_groups:
+    idAlpinists_groups: int PK
+    idAlpinists: int FK >- Alpinists.idAlpinists
+    idMountain_climbing: int FK >- Mountain_climbing.idMountain_climbing
+
+Mountain_climbing:
+    idMountain_climbing: int PK
+    idMountain: int FK >- Mountains.idMountain
+    Expedition_start: datetime
+    Expedition_end: datetime
+
+Mountains:
+    idMountain: int PK
+    Name: varchar
+    Height: varchar
+    Region: varchar
+    Country: varchar

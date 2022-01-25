@@ -1,0 +1,28 @@
+Patient:
+    idPatient: int PK
+    Name: varchar
+    Sex: binary
+    Date_of_birth: datetime
+    Adress: varchar
+
+Doctor:
+    idDoctor: int PK
+    Name: varchar
+
+Medical_Check_Up:
+    idMedical_Check_up: int PK
+    Date_of_check_up: datetime
+    Place_of_check_up: varchar
+    Symptoms: varchar
+    Diagnosis: varchar
+    Prescription: varchar
+    Patient_name: varchar
+    Patient_idPatient: int FK >- Patient.idPatient
+    Doctor_idDoctor: int FK >- Doctor.idDoctor
+    Medicine_idMedicine: int FK >- Medicine.idMedicine
+
+Medicine:
+    idMedicine: int PK
+    Medicine_name: varchar
+    Instruction: varchar
+    Side_effects: varchar

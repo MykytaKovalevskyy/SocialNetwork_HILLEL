@@ -1,0 +1,31 @@
+Seller:
+    idSeller: int PK
+    Name: varchar
+
+Item:
+    idItem: int PK
+    Description: varchar
+    Seller_idSeller: int FK - Seller.idSeller
+
+Lot:
+    idLot: int PK
+    Starting_price: varchar
+    Item_idItem: int FK - Item.idItem
+    Auction_idAuction: int FK >- Auction.idAuction
+
+Auction:
+    idAuction: int PK
+    Time: datetime
+    Place: varchar
+    Details: varchar
+
+Buyer:
+    idBuyer: int PK
+    Name: varchar
+
+Transaction:
+    idTransaction: int PK
+    Auction_price: varchar
+    Auction_idAuction: int FK - Auction.idAuction
+    Buyer_idBuyer: int FK - Buyer.idBuyer
+    Lot_idLot: int FK - Lot.idLot
